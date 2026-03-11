@@ -1,5 +1,11 @@
-<?php get_header(); ?>
+<?php 
 
+/*
+    Template Name: Simple Page
+*/
+?>
+
+<?php get_header(); ?>
 
 <?php 
 
@@ -8,9 +14,9 @@ if(have_posts()):
     while( have_posts()): the_post(); ?>
 
 
-        <p><?php the_content(); ?></p>
+        <h1> <?php the_title(); ?> </h1>
 
-        <h3> <?php the_title(); ?> </h3>
+
 
         <hr/>
     
