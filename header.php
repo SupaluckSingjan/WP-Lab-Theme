@@ -6,6 +6,16 @@
     <title>Awesome Theme</title>
     <?php wp_head(); ?>
 </head>
-<body>
+
+<?php 
+
+    if(is_front_page()):
+        $wp_lab_classes = array('lab-class', 'my-class');
+    else: 
+        $wp_lab_classes = array('no-lab-class');
+    endif;
+
+?>
+<body <?php body_class($wp_lab_classes); ?>>
     <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
     
