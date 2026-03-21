@@ -5,15 +5,10 @@
 
 if(have_posts()): 
     
-    while( have_posts()): the_post(); ?>
+    while( have_posts()): the_post(); echo "This is post format"; ?>
 
-       <h3> <?php the_title(); ?> </h3>
-       <div class="thumbnail-img"><?php the_post_thumbnail(); ?></div>
-       <small>Posted on: <?php the_time('F j, Y'); ?> at <?php the_time('g: i a'); ?>, in <?php the_category(); ?></small>
+       <?php get_template_part('content', 'get_post_format()'); ?>
 
-        <p><?php the_content(); ?></p>
-
-        <hr/>
     
     <?php endwhile;
 
