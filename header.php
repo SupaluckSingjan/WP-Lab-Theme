@@ -22,6 +22,8 @@
         //var_dump(get_custom_header());
     
     ?>
+<div class="container">
+
 
 
     <img src="<?php header_image(); ?>" 
