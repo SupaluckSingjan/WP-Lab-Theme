@@ -1,9 +1,9 @@
 <?php 
 
 /*
-=============================
+================================================
  Include scripts
-=============================
+================================================
 */
 
 function awesome_script_enqueue() {
@@ -16,9 +16,9 @@ add_action('wp_enqueue_scripts', 'awesome_script_enqueue');
 
 
 /*
-=============================
+================================================
  Activate menus
-=============================
+================================================
 */
 function awesome_theme_setup() {
     add_theme_support('menus');
@@ -29,9 +29,9 @@ function awesome_theme_setup() {
 add_action('after_setup_theme', 'awesome_theme_setup');
 
 /*
-=============================
+================================================
  Theme support function 
-=============================
+================================================
 */
 add_theme_support('custom-background');
 add_theme_support('custom-header');
@@ -41,25 +41,24 @@ add_theme_support('post-formats', array('aside', 'image', 'video'));
 
 
 /*
-=============================
- Remove jQuery default version
-=============================
+================================================
+ Replace jQuery default version to 4.0.0 ver.
+================================================
 */
 function replace_jquery_version() {
     if (!is_admin()) {
         // Remove default WordPress jQuery
         wp_deregister_script('jquery');
 
-        // Register custom jQuery (Use CDN)
+        // Register custom jQuery 4.0.0 (Use CDN)
         wp_register_script(
             'jquery',
             'https://code.jquery.com/jquery-4.0.0.min.js',
             array(),
             '4.0.0',
-            true
+            false
         );
 
-        // Enqueue it
         wp_enqueue_script('jquery');
     }
 }
