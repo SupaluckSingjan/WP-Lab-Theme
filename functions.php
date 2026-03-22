@@ -39,4 +39,28 @@ add_theme_support('post-thumbnails');
 
 add_theme_support('post-formats', array('aside', 'image', 'video'));
 
-?>
+
+/*
+=============================
+ Remove jQuery default version
+=============================
+*/
+function replace_jquery_version() {
+    if (!is_admin()) {
+        // Remove default WordPress jQuery
+        wp_deregister_script('jquery');
+
+        // Register custom jQuery (Use CDN)
+        wp_register_script(
+            'jquery',
+            'https://code.jquery.com/jquery-4.0.0.min.js',
+            array(),
+            '4.0.0',
+            true
+        );
+
+        // Enqueue it
+        wp_enqueue_script('jquery');
+    }
+}
+add_action('wp_enqueue_scripts', 'replace_jquery_version');
