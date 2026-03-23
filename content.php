@@ -1,9 +1,12 @@
 
 <article id="post-<?php the_ID(); ?>" class="<?php post_class(); ?>">
 
-       <h3> <?php the_title(); ?> </h3>
+       <header class=""entry-header>
+              <h1> <?php the_title(); ?> </h1>
+              <small>Posted on: <?php the_time('F j, Y'); ?> at <?php the_time('g: i a'); ?>, in <?php the_category(); ?></small>
+       </header>
        <div class="thumbnail-img"><?php the_post_thumbnail(); ?></div>
-       <small>Posted on: <?php the_time('F j, Y'); ?> at <?php the_time('g: i a'); ?>, in <?php the_category(); ?></small>
+       
 
         <p><?php the_content(); ?></p>
 
