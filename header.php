@@ -16,15 +16,35 @@
     endif;
 
 ?>
+
 <body <?php body_class($wp_lab_classes); ?>>
-    <?php wp_nav_menu(array('theme_location' => 'primary')); 
-    
-        //var_dump(get_custom_header());
-    
-    ?>
-<div class="container">
+    <div class="container"> 
+        <div class="row">
+            <div class="col-12">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Navbar</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    
+                        <?php wp_nav_menu(array(
+                            'theme_location' => 'primary', 
+                            'container' => 'false',
+                            'menu_class' => 'navbar-nav ms-auto mb-2 mb-lg-0'
+                            )
+                        ); 
+                        ?>
+                        
+                    
+                    </div>
+                </div>
+                </nav>
+                
 
-
+            </div><!-- class="col-12" -->
+        </div><!-- class="row" -->
 
     <img src="<?php header_image(); ?>" 
         height="<?php echo get_custom_header()->height;?>"
