@@ -7,21 +7,25 @@
        </header>
 
        <div class="row">
-              <div class="col-sm-12 col-md-4">
-                     <div class="thumbnail"><?php the_post_thumbnail('thumbnail'); ?></div>
-              </div><!-- class="col-sm-12 col-md-4" -->
 
-              <div class="col-sm-12 col-md-8">
-                     <p><?php the_content(); ?></p>
-              </div><!-- class="col-sm-12 col-md-8" -->
+              <?php if( has_post_thumbnail()): ?>
+                     <div class="col-sm-12 col-md-4">
+                            <div class="thumbnail"><?php the_post_thumbnail('thumbnail'); ?></div>
+                     </div><!-- class="col-sm-12 col-md-4" -->
 
-       
+                     <div class="col-sm-12 col-md-8">
+                            <p><?php the_content(); ?></p>
+                     </div><!-- class="col-sm-12 col-md-8" -->
+
+              <?php else: ?>
+                     <div class="col-sm-12 col-md-8">
+                            <p><?php the_content(); ?></p>
+                     </div><!-- class="col-sm-12 col-md-8" -->
+
+              <?php endif; ?>
 
        </div><!-- class="row" -->
        
-       
-       
-
         
 
         <hr/>
