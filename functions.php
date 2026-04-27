@@ -43,6 +43,20 @@ add_theme_support('post-thumbnails');
 add_theme_support('post-formats', array('aside', 'image', 'video'));
 
 
+
+/*
+================================================
+ Sidebar function
+================================================
+*/
+function awesome_widget_setup() {
+    register_sidebar(array(
+        'name'=> 'Sidebar',
+        'id' => 'sidebar-1',
+    ));
+}
+
+
 /*
 ================================================
  Replace jQuery default version to 4.0.0 ver.
