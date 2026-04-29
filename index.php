@@ -5,18 +5,32 @@
         width="<?php echo get_custom_header()->width; ?>" 
         alt=""
     />
-<?php 
 
-if(have_posts()): 
-    
-    while( have_posts()): the_post(); echo "This is post format"; ?>
+<div class="row">
+    <div class="col-sm-8">
+        <?php 
 
-       <?php get_template_part('content', get_post_format()); ?>
+        if(have_posts()): 
+            
+            while( have_posts()): the_post(); echo "This is post format"; ?>
 
-    
-    <?php endwhile;
+            <?php get_template_part('content', get_post_format()); ?>
 
-endif;
+            
+            <?php endwhile;
 
-?>
+        endif;
+
+        ?>
+
+    </div><!-- class="col-sm-8" -->
+
+    <div class="col-sm-4">
+        <?php get_sidebar(); ?>
+    </div><!-- class="col-sm-4" -->
+</div><!-- class="row" -->
+
+
+
+
 <?php get_footer(); ?>
